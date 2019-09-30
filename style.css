@@ -1,0 +1,284 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;}
+
+/* -----------------------------------------------------------------------------------------------
+---------core style */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 2.3;
+}
+
+hr {
+    width: 35%;
+    height: 2px;
+}
+
+/*header style*/
+
+.grid-header {
+    display: flex;
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    justify-content: center;
+}
+
+/*main container style*/
+
+.main-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+/*grid container and base for grid items*/
+
+.grid-container {
+    display: grid;
+    grid-gap: 60px 40px;
+    grid-template-columns: 350px 350px 350px;
+    grid-template-rows: 25px 525px 525px 525px 525px 25px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.grid-item {
+    /* background-color: rgba(255, 0, 0, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8); */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    position: relative;
+}
+
+.grid-image {
+    height: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    object-fit: cover;
+}
+
+/*footer style*/
+
+.grid-footer {
+    display: flex;
+    grid-column: 1 / span 3;
+    grid-row: 6;
+    justify-content: center;
+}
+
+/*3rd grid item style*/
+
+.big-quote {
+    font-size: 5rem;
+    font-family: fantasy;
+    line-height: .3;
+}
+
+.orange-color {
+    color: rgb(201, 97, 0);
+}
+
+.upper-case {
+    font-variant-caps: all-petite-caps;
+}
+
+.text-right {
+    margin-top: 70%;
+    margin-left: 30%;
+}
+
+/*7th gird item style*/
+
+.text-left {
+    margin-top: 70%;
+    margin-right: 30%;
+}
+
+ /*centered text for grid item styles*/
+
+.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-center h1{
+    font-size: 2.7rem;
+    line-height: 2.5;
+
+}
+
+.text-center p {
+    text-align: center;
+    line-height: 1.5;
+}
+
+/*6th grid item text, overlay & image style*/
+
+span {
+    color: white;
+    font-size: 1rem;
+    line-height: 2.5;
+}
+
+.overlay-img {
+
+    background: linear-gradient(0deg, rgba(81, 130, 155, 0.884), rgba(81, 130, 155, 0.884)), url("https://source.unsplash.com/random/?hops");
+    background-size: cover;
+    height: 100%;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.grid-color {
+    background-color: rgb(211, 211, 211);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/*hops png style at last grid item corner*/
+
+.hops {
+    position: absolute;
+    width: 100px;
+    top: 90%;
+    left: 83%;
+    transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    /* Safari 3-8 */
+    -ms-transform: rotate(340deg);
+    /* IE 9 */
+}
+
+/*media query 2 column grid*/
+
+@media(max-width: 1200px) {
+
+    .grid-container {
+        display: grid;
+        grid-gap: 60px 40px;
+        grid-template-columns: 350px 350px;
+        grid-template-rows: 25px 525px 525px 525px 525px 525px 525px 25px;
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+    }
+
+    .grid-header {
+        display: flex;
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    .grid-footer {
+        display: flex;
+        grid-column: 1 / span 2;
+        grid-row: 8;
+    }
+}
+
+/*media query 1 column grid (mobile)*/
+
+@media(max-width: 800px) {
+
+    .grid-container {
+        display: grid;
+        grid-gap: 60px 40px;
+        grid-template-columns: 300px;
+        grid-template-rows: 15px 525px 525px 525px 525px 525px 525px 525px 525px 525px 525px 525px 15px;
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+    }
+
+    .grid-header {
+        display: flex;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .grid-footer {
+        display: flex;
+        grid-column: 1;
+        grid-row: 13;
+    }
+
+    hr {
+        width: 15%;
+    }
+
+    .hops{
+        width: 80px;
+        top: 93%;
+        left: 80%;
+    }
+    .text-center h1{
+        font-size: 2.0rem;
+        font-weight: bold;
+        font-stretch: extra-expanded;
+    }
+
+}
